@@ -1,0 +1,11 @@
+<h1>ログイン画面</h1>
+
+<%= form_with model: @roguin,:url => {:action => :create} ,local: true do |form| %>
+  <p>
+    ID <%= form.text_field :name %>
+  </p>
+  <p>
+    PASS <%= form.text_field :pass %>
+  </p>
+  <%= form.submit "新規登録" %>
+<% end %>

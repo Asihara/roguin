@@ -1,0 +1,2 @@
+module RoguinsHelper
+end
