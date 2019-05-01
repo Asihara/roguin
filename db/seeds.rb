@@ -8,6 +8,6 @@
 
 
 Roguin1.create(
-  name: "芦原",
+  name: "芦  原",
   pass: "as"
   )
