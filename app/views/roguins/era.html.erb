@@ -8,25 +8,10 @@
 
 <%= form_with model: @roguin,:url => {:action => :create} ,local: true do |form| %>
   <p>
-    ID <%= form.text_field :name , autocomplete: 'off'%>
+    ID <%= form.text_field :name %>
   </p>
   <p>
     PASS <%= form.text_field :pass , autocomplete: 'off'%>
   </p>
   <%= form.submit "新規登録" %>
 <% end %>
-
-<p>
-  <%= link_to "編集", "/roguins/era" %>
-</p>
-
-<style>
-.box1 {
-    color: #2c2c2f;
-    background: #cde4ff;/*背景色*/
-}
-.box1 p {
-    margin: 0; 
-    padding: 0;
-}
-</style>

@@ -6,16 +6,33 @@ class RoguinsController < ApplicationController
 
   def create
     @roguin = Roguin1.new(roguin_params)
+    #@roguin.save
+    #redirect_to "/roguins"
 
-    # 上の行はインスタンスを作っただけ。saveメソッドで保存しないと、消える。
-    @roguin.save
+    
+    @y = Roguin1.all
 
+    @y.each do |a|
+      if a.name == @roguin.name then
+          @x = 1
+      end
+    end 
+    
+    if @x != 1 then
+      @roguin.save
+      redirect_to "/roguins"
+    else
+      redirect_to "/roguins",notice: 'IDまたはPASSが違うため、ログインできません。'
+    end
     # saveの後にshow(商品詳細ページ)に飛ぶ設定をします。
     # これを設定しないと、プログラムが行き場をなくしてエラーが起きます。
-    redirect_to "/roguins"
-
-    # redirect_to "/roguins"
+    
+    
     # だとindexページにリダイレクトする
+  end
+
+  def update
+    
   end
 
   private
